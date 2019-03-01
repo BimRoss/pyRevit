@@ -1,0 +1,37 @@
+{
+  "version": "3.0.0",
+  "processes": [{
+    "name": "Revit.exe"
+  }],
+  "install": [{
+      "action": "run",
+      "source": "pyRevit-v45\\pyRevit\\release\\create-configuration-file.bat"
+    },
+    {
+      "action": "run",
+      "source": "pyRevit-v45\\pyRevit\\release\\install_addin.bat"
+    },
+    {
+      "action": "copy",
+      "source": "pyRevit-v45",
+      "destination": "$APPDATA\\pyRevit"
+    }
+  ],
+  "uninstall": [{
+      "action": "delete",
+      "source": "$APPDATA\\Autodesk\\Revit\\Addins\\2017\\pyRevit.addin"
+    },
+    {
+      "action": "delete",
+      "source": "$APPDATA\\Autodesk\\Revit\\Addins\\2018\\pyRevit.addin"
+    },
+    {
+      "action": "delete",
+      "source": "$APPDATA\\pyRevit\\pyRevit-v45"
+    }
+  ],
+  "urls": {
+    "documentation": "https://pyrevit.readthedocs.io/en/latest/",
+    "support": "https://wework.slack.com/messages/C6AASV7E0/"
+  }
+}
